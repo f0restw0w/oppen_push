@@ -64,10 +64,11 @@ public final class NotificationReceiver extends BroadcastReceiver {
             Log.d(LOGTAG, "notificationTitle=" + notificationTitle);
             Log.d(LOGTAG, "notificationMessage=" + notificationMessage);
             Log.d(LOGTAG, "notificationUri=" + notificationUri);
-
-            Notifier notifier = new Notifier(context);
-            notifier.notify(notificationId, notificationApiKey,
-                    notificationTitle, notificationMessage, notificationUri);
+// #############################  remove notify to user start by f0restw0w #################################
+//            Notifier notifier = new Notifier(context);  
+//            notifier.notify(notificationId, notificationApiKey,
+//                    notificationTitle, notificationMessage, notificationUri);
+// #############################  remove notify to user end by f0restw0w #################################
         }
 
         //        } else if (Constants.ACTION_NOTIFICATION_CLICKED.equals(action)) {

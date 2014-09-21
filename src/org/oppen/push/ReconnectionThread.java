@@ -56,10 +56,10 @@ public class ReconnectionThread extends Thread {
 
     private int waiting() {
         if (waiting > 20) {
-            return 600;
+            return 3600;
         }
         if (waiting > 13) {
-            return 300;
+            return 1800;
         }
         return waiting <= 7 ? 10 : 60;
     }

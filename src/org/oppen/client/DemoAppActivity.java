@@ -15,38 +15,21 @@
  */
 package org.oppen.client;
 
-import org.oppen.push.R;
 import org.oppen.push.ServiceManager;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 
-/**
- * This is an oppen client demo application.
- * 
- * @author Sehwan Noh (devnoh@gmail.com)
- */
 public class DemoAppActivity extends Activity {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		Log.d("DemoAppActivity", "onCreate()...");
-
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);
+		pushInit();
+	}
 
-		// Settings
-		Button okButton = (Button) findViewById(R.id.btn_settings);
-		okButton.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View view) {
-				ServiceManager.viewNotificationSettings(DemoAppActivity.this);
-			}
-		});
+	public void pushInit() {
 		ServiceManager serviceManager = new ServiceManager(this);
-		serviceManager.setNotificationIcon(R.drawable.notification);
 		serviceManager.startService();
 	}
 }
